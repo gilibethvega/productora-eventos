@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-01-22
+  duration: 1
+  assistance: 1
+  place: MyString
+  group: one
+
+two:
+  date: 2021-01-22
+  duration: 1
+  assistance: 1
+  place: MyString
+  group: two
