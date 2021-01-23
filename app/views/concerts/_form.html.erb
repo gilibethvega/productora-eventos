@@ -1,4 +1,4 @@
-<%= form_with(model: concert, local: true) do |form| %>
+<%= form_with(model: [@group, concert], local: true) do |form| %>
   <% if concert.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :date %>
+    <%= form.label :date, 'Fecha' %>
     <%= form.date_select :date %>
   </div>
 
   <div class="field">
-    <%= form.label :duration %>
+    <%= form.label :duration, 'Duración en horas' %>
     <%= form.number_field :duration %>
   </div>
 
@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :group_id %>
-    <%= form.text_field :group_id %>
+    <%= form.label :group %>
+    <%= form.select :group_id, @groups.map{ |group| [group.name, group.id]}, prompt: "Seleccione una opción"  %>
   </div>
 
   <div class="actions">

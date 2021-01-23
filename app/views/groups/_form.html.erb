@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :members_gender %>
-    <%= form.number_field :members_gender %>
+    <%= form.select :members_gender, Group.members_genders.keys, prompt: "Seleccione una opción" %>
   </div>
 
   <div class="field">

@@ -10,11 +10,13 @@ class ConcertsController < ApplicationController
   # GET /concerts/1
   # GET /concerts/1.json
   def show
+    @concert = Concert.find(params[:id])
   end
 
   # GET /concerts/new
   def new
     @concert = Concert.new
+    @groups = Group.all
   end
 
   # GET /concerts/1/edit
